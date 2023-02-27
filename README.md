@@ -7,7 +7,8 @@ Singleton Design Patern,
 Reactive Programing,
 Unit Tests,
 UIKit,
-UrlSession
+UrlSession,
+Generics
 
 ### Main Page
 https://user-images.githubusercontent.com/76450260/219870833-41664076-8328-4fac-b7c2-b68157d9da56.mp4
