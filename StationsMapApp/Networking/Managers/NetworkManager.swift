@@ -33,13 +33,12 @@ class NetworkManager {
             }
             dataTask.resume()
         }
-        
     }
     
     fileprivate func handleResponse<T: Codable>(data: Data, completion: @escaping((Result<T, ErrorTypes>) -> ())) {
         do{
-            let result = try? JSONDecoder().decode(T.self, from: data)
-            completion(.success(result!))
+            let result = try JSONDecoder().decode(T.self, from: data)
+            completion(.success(result))
         } catch{
             completion(.failure(.invalidData))
         }
