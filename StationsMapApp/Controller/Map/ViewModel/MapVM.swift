@@ -31,8 +31,10 @@ final class MapVM: StatefulVM<MapVMStateChange> {
 extension MapVM: MapVMInterface {
     func getStations() {
         stationsService.getStations(latitude: latitude,
-                                           longitude: longitude,
-                                           distance: distance) { items, errorMessage in
+                                    longitude: longitude,
+                                    distance: distance) { [weak self] items, errorMessage in
+            guard let self = self else { return }
+            
             if let items = items {
                 self.stations = items
                 self.emit(.getStationsSuccess)

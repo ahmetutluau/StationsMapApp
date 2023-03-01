@@ -9,9 +9,7 @@ import Foundation
 
 protocol StateChange { }
 
-class StatefulVM<StateChange>: NSObject {
-    var dispatchGroup = DispatchGroup()
-    
+class StatefulVM<StateChange>: NSObject {    
     typealias StateChangeHandler = ((StateChange) -> Void)
     
     private var stateChangeHandler: StateChangeHandler?

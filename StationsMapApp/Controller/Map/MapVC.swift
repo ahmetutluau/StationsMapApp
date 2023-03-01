@@ -126,7 +126,8 @@ extension MapVC {
                 }
             case .getStationsSuccess:
                 guard let stations = self.viewModel.stations else { return }
-                DispatchQueue.main.async {                    self.addAnotation(coords: stations)
+                DispatchQueue.main.async {
+                    self.addAnotation(coords: stations)
                 }
             }
         }
